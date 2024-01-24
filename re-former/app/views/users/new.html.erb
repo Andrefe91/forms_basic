@@ -1,7 +1,7 @@
 <%# <h1>Users#new</h1> %>
 <%# <p>Find me in app/views/users/new.html.erb</p> %>
 
-<div class="form_container">
+<%# <div class="form_container">
 
     <div class="salutations">
         <p>Welcome New User!</p>
@@ -9,7 +9,7 @@
     </div>
 
     <form action="/users" method="post" accept-charset="UTF-8">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token @">
 
         <p>
             <label for="username">Username: </label>
@@ -32,6 +32,30 @@
         </div>
 
     </form>
-</div>
+</div> %>
 
+<%= form_tag("/users", method: "post") do %>
+    <div class="salutations">
+        <p>Welcome New User!</p>
+        <p>Please, register below:</p>
+    </div>
 
+    <div>
+        <%= label_tag(:username, "Username: ") %>
+        <%= text_field_tag(:username) %>
+    </div>
+
+    <div>
+        <%= label_tag(:username, "Password: ") %>
+        <%= password_field_tag(:password) %>
+    </div>
+
+    <div>
+        <%= label_tag(:email, "E-mail: ") %>
+        <%= email_field_tag(:email) %>
+    </div>
+
+    <div>
+        <%= submit_tag("Register") %>
+    </div>
+<% end %>
