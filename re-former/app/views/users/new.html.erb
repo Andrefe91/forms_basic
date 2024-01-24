@@ -34,6 +34,8 @@
     </form>
 </div> %>
 
+<%# Comment the block. Delete this and last end %>
+<%  if false %>
 <%= form_tag("/users", method: "post") do %>
     <div class="salutations">
         <p>Welcome New User!</p>
@@ -59,3 +61,8 @@
         <%= submit_tag("Register") %>
     </div>
 <% end %>
+<% end %>
+<%# Here finishes the block %>
+
+
+
