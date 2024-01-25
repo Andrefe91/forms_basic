@@ -64,5 +64,24 @@
 <% end %>
 <%# Here finishes the block %>
 
+<%= form_with model: @user do |form| %>
+    <div class="user_data">
+        <%= form.label(:username, "Username: ")%>
+        <%= form.text_field :username %><br />
+    </div>
 
+    <div class="user_data">
+        <%= form.label(:password, "Password: ")%>
+        <%= form.password_field(:password) %>
+    </div>
+
+    <div class="user_data">
+        <%= form.label(:email, "Email: ")%>
+        <%= form.email_field(:email) %>
+    </div>
+
+    <div class="submit_button">
+        <%= form.submit %>
+    </div>
+<% end %>
 
